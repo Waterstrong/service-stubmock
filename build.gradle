@@ -1,11 +1,61 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion")
+    }
+}
+
 apply plugin: 'java'
 apply plugin: 'idea'
+apply plugin: 'spring-boot'
 
+jar {
+    baseName = "$jarBaseName"
+    version = "$jarVersion"
+}
 
 repositories {
-    jcenter()
+    mavenCentral()
+}
+
+sourceCompatibility = "$javaVersion"
+targetCompatibility = "$javaVersion"
+idea.project.vcs = "Git"
+
+sourceSets {
+    main {
+        java.srcDirs = ['src/main/java']
+        resources.srcDirs = ['src/main/resources']
+    }
+    test {
+        java.srcDirs = ['src/test/unit/java', 'src/test/intg/java']
+        resources.srcDirs = ['src/test/unit/resources', 'src/test/intg/resources']
+    }
 }
 
 dependencies {
-    testCompile 'junit:junit:4.12'
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("io.springfox:springfox-swagger2:$swaggerVersion")
+    compile("io.springfox:springfox-swagger-ui:$swaggerVersion")
+    testCompile("com.jayway.jsonpath:json-path")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+}
+
+defaultTasks 'clean', 'build'
+
+test {
+    exclude '**/*IntegrationTest.class'
+}
+task unitTest(dependsOn: test)
+
+task integrationTest(type: Test) {
+    include '**/*IntegrationTest.class'
+}
+build.dependsOn integrationTest
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = "$gradleVersion"
 }

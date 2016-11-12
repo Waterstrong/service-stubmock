@@ -2,11 +2,21 @@ package ws.stubby4j.demo.dao;
 
 import java.util.List;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.client.RestTemplate;
+
 import ws.stubby4j.demo.domain.Book;
 
 public class BookDao {
+
+    @Value("${book.service.url}")
+    private String bookServiceUrl;
+
+    @Autowired
+    private RestTemplate restTemplate;
+
     public List<Book> retrieveBooks(String userId) {
-        throw new NotImplementedException();
+        return restTemplate.getForObject(bookServiceUrl, List.class, userId);
     }
 }

@@ -1,3 +1,15 @@
 server:
   port: 8081
   context-path: /service-stubmock
+
+book:
+  service:
+    url: http://localhost:8083/book-service/{userId}/books
+    username: apiuser
+    password: password
+
+user:
+  service:
+    url: http://localhost:8082/book-service/users/{userId}
+    username: apiuser
+    password: password

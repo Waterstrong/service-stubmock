@@ -1,0 +1,18 @@
+- request:
+    method: GET
+    url: ^/user-service/users/123456$
+  response:
+    status: 200
+    headers:
+        content-type: application/json
+    body: >
+        {"userId": 123456, "userName": "Peter", "level": 5}
+
+- request:
+    method: GET
+    url: ^/book-service/123456/books$
+  response:
+    status: 200
+    headers:
+        Content-Type: application/json
+    file: json/books-response.json

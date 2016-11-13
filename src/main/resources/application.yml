@@ -10,6 +10,6 @@ book:
 
 user:
   service:
-    url: http://localhost:8082/book-service/users/{userId}
+    url: http://localhost:8082/user-service/users/{userId}
     username: apiuser
     password: password

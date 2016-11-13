@@ -4,6 +4,7 @@ public class Book {
     private String bookId;
     private String isbn;
     private String bookName;
+    private String author;
     private String publisher;
-    private String price;
+    private Double price;
 }

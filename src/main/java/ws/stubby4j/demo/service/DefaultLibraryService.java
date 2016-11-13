@@ -20,7 +20,7 @@ public class DefaultLibraryService implements LibraryService {
     private BookDao bookDao;
 
     @Override
-    public UserWithBooks retrieveUser(String userId) {
+    public UserWithBooks retrieveUserWithBooks(String userId) {
         User user = userDao.retrieveUser(userId);
         List<Book> books = bookDao.retrieveBooks(userId);
         return new UserWithBooks(user, books);

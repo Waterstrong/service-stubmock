@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import ws.stubby4j.demo.domain.UserWithBooks;
 import ws.stubby4j.demo.service.LibraryService;
 
 @RestController
@@ -18,8 +19,9 @@ public class LibraryController {
     private LibraryService libraryService;
 
     @RequestMapping(method = GET, value = "/library/{userId}")
-    public ResponseEntity<?> retrieveUserWithBooks(@PathVariable("userId") String userId) {
-        return new ResponseEntity<>(libraryService.retrieveUserWithBooks(userId), OK);
+    public ResponseEntity<UserWithBooks> retrieveUserWithBooks(@PathVariable("userId") String userId) {
+        UserWithBooks userWithBooks = libraryService.retrieveUserWithBooks(userId);
+        return new ResponseEntity<>(userWithBooks, OK);
     }
 
 }

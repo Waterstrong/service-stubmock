@@ -1,0 +1,11 @@
+book:
+  service:
+    url: http://localhost:8882/book-service/{userId}/books
+    username: apiuser
+    password: password
+
+user:
+  service:
+    url: http://localhost:8882/user-service/users/{userId}
+    username: apiuser
+    password: password

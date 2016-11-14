@@ -3,11 +3,19 @@ package ws.stubby4j.demo.domain;
 import java.util.List;
 
 public class UserWithBooks {
-    private final User user;
-    private final List<Book> books;
+    private User user;
+    private List<Book> books;
 
     public UserWithBooks(User user, List<Book> books) {
         this.user = user;
         this.books = books;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public List<Book> getBooks() {
+        return books;
     }
 }

@@ -8,4 +8,13 @@ public class User {
     public String getUserId() {
         return userId;
     }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public Integer getLevel() {
+        return level;
+    }
+
 }

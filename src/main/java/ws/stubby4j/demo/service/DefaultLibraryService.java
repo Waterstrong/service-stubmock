@@ -21,6 +21,7 @@ public class DefaultLibraryService implements LibraryService {
 
     @Override
     public UserWithBooks retrieveUserWithBooks(String userId) {
+        // TODO: make them concurrent
         User user = userDao.retrieveUser(userId);
         List<Book> books = bookDao.retrieveBooks(userId);
         return new UserWithBooks(user, books);

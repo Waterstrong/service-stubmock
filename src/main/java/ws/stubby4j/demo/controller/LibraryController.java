@@ -18,10 +18,9 @@ public class LibraryController {
     @Autowired
     private LibraryService libraryService;
 
-    @RequestMapping(method = GET, value = "/library/{userId}")
+    @RequestMapping(method = GET, value = "/library/users/{userId}")
     public ResponseEntity<UserWithBooks> retrieveUserWithBooks(@PathVariable("userId") String userId) {
-        UserWithBooks userWithBooks = libraryService.retrieveUserWithBooks(userId);
-        return new ResponseEntity<>(userWithBooks, OK);
+        return new ResponseEntity<>(libraryService.retrieveUserWithBooks(userId), OK);
     }
 
 }

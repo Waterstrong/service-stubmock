@@ -1,4 +1,4 @@
-package ws.stubby4j.demo.configuration;
+package ws.stubmock.demo.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

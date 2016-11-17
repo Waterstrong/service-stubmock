@@ -1,4 +1,4 @@
-package ws.stubby4j.demo.configuration;
+package ws.stubmock.demo.configuration;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
@@ -7,7 +7,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.PropertySources;
 
 @Configuration
-@ComponentScan(basePackages = {"ws.stubby4j.demo"})
+@ComponentScan(basePackages = {"ws.stubmock.demo"})
 @PropertySources(value = {
         @PropertySource("classpath:application.yml")
 })

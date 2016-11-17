@@ -1,11 +1,11 @@
-package ws.stubby4j.demo.dao;
+package ws.stubmock.demo.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
-import ws.stubby4j.demo.domain.User;
+import ws.stubmock.demo.domain.User;
 
 @Component
 public class UserDao {

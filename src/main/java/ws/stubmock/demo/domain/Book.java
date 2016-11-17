@@ -1,4 +1,4 @@
-package ws.stubby4j.demo.domain;
+package ws.stubmock.demo.domain;
 
 public class Book {
     private String bookId;

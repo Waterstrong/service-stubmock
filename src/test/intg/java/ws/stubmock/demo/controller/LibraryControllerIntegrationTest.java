@@ -1,4 +1,4 @@
-package ws.stubby4j.demo.controller;
+package ws.stubmock.demo.controller;
 
 import static java.lang.String.format;
 import static org.hamcrest.Matchers.hasSize;
@@ -11,9 +11,10 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import ws.stubby4j.demo.BaseIntegrationTest;
+import ws.stubmock.demo.BaseIntegrationTest;
+import ws.stubmock.demo.Stubby4JIntegrationTest;
 
-public class LibraryControllerIntegrationTest extends BaseIntegrationTest {
+public class LibraryControllerIntegrationTest extends Stubby4JIntegrationTest {
 
     @Autowired
     private LibraryController libraryController;

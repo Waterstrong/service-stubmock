@@ -41,6 +41,7 @@ dependencies {
     compile("io.springfox:springfox-swagger-ui:$swaggerVersion")
     compile("io.reactivex:rxjava:$rxjavaVersion")
     testCompile("by.stub:stubby4j:$stubby4jVersion")
+    testCompile("com.github.dreamhead:moco-core:$mocoVersion")
     testCompile("com.jayway.jsonpath:json-path")
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }

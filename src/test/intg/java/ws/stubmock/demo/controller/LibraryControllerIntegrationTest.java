@@ -5,24 +5,12 @@ import static org.hamcrest.Matchers.hasSize;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
-import org.junit.Before;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 
-import ws.stubmock.demo.BaseIntegrationTest;
 import ws.stubmock.demo.Stubby4JIntegrationTest;
 
 public class LibraryControllerIntegrationTest extends Stubby4JIntegrationTest {
-
-    @Autowired
-    private LibraryController libraryController;
-
-    @Before
-    public void setUp() {
-        mockMvc = standaloneSetup(libraryController).build();
-    }
 
     @Test
     public void shouldRetrieveUserWithBooksSuccessfully() throws Exception {

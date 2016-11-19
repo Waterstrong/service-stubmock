@@ -1,0 +1,39 @@
+[
+  {
+    "request": {
+      "uri": "/book-service/123456/books"
+    },
+    "response": {
+      "json": [
+        {
+          "bookId": 1,
+          "isbn": "9787508344980",
+          "bookName": "Head First Java",
+          "author": "Kathy Sierra & Bert Bates",
+          "publisher": "O'REILLY",
+          "price": 79.00
+        },
+        {
+          "bookId": 2,
+          "isbn": "9787512322233",
+          "bookName": "Head First Python",
+          "author": "Paul Barry",
+          "publisher": "O'REILLY",
+          "price": 68.00
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "uri": "/user-service/users/123456"
+    },
+    "response": {
+      "json": {
+        "userId": 123456,
+        "userName": "Peter",
+        "level": 5
+      }
+    }
+  }
+]
